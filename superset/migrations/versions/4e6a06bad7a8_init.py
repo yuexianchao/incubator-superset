@@ -127,7 +127,7 @@ def upgrade():
             "changed_by_fk", sa.Integer(), sa.ForeignKey("ab_user.id"), nullable=True
         ),
         sa.PrimaryKeyConstraint("id"),
-        sa.UniqueConstraint("table_name"),
+        sa.UniqueConstraint("database_id,table_name"),
     )
     op.create_table(
         "columns",
